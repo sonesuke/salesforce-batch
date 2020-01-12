@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  proc1:
+    build:
+      context: dockerfile
+    env_file: .env
+    volumes:
+    - ./:/host
+    command: python /host/src/proc1.py
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
