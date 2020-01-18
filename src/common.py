@@ -32,7 +32,7 @@ def login():
     session = requests.Session()
     return Salesforce(instance_url = response['instance_url'],
                     session_id=response['access_token'],
-                    sandbox=False,
+                    sandbox=sandbox,
                     session=session)
 
 
